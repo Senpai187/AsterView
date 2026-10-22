@@ -1,0 +1,17 @@
+.venv/
+.ai-venv/
+work/
+models/
+*.npz
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+*.dcm
+*.dicom
+*.aster.json
+!docs/examples/synthetic-landmarks.aster.json
+patient-data/
+benchmark-results.json

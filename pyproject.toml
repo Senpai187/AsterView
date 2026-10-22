@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "asterview"
+version = "0.10.0"
+description = "Local DICOM volume workstation for CT and dental CBCT development"
+license = { file = "LICENSE" }
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "numpy==2.4.6", "scipy==1.17.1", "pydicom==3.0.2",
+  "vtk==9.7.1", "PySide6==6.12.0",
+  "qtawesome==1.4.2",
+  "scikit-image==0.25.2",
+  "pylibjpeg==2.1.0", "pylibjpeg-libjpeg==2.4.0",
+  "pylibjpeg-openjpeg==2.6.0", "pyjpegls==1.5.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1"]
+
+[project.scripts]
+asterview = "asterview.app:main"
+
+[tool.setuptools.packages.find]
+include = ["asterview*"]
+
+[tool.setuptools.package-data]
+asterview = ["assets/*.ico", "assets/*.svg", "assets/*.docx"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
